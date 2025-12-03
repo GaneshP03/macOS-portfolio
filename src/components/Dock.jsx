@@ -66,7 +66,10 @@ useGSAP(() => {
     if (!app.canOpen) return;
 
       const window = windows[app.id]; 
-      
+      if(!window) {
+        console.log("The window does not exist ") 
+        return;
+      }
       if (window.isOpen) {
         closeWindow(app.id);
       } else {
